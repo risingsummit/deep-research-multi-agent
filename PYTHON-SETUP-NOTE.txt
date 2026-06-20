@@ -1,0 +1,24 @@
+This project needs 64-bit Python on Windows.
+
+The 32-bit Python installer can create errors like:
+
+  Failed building wheel for tiktoken
+  Failed building wheel for ormsgpack
+  error: failed-wheel-build-for-install
+
+That happens because parts of the LangGraph/OpenAI dependency stack do not reliably
+ship 32-bit Windows wheels.
+
+Use:
+
+  Python 3.12 or 3.13, Windows installer (64-bit)
+
+During install, check:
+
+  Add Python to environment variables
+  pip
+  Python Launcher
+
+Then run:
+
+  RUN-MULTI-AGENT-SYSTEM.bat

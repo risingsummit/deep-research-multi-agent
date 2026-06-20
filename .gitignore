@@ -1,0 +1,7 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+launcher-log.txt
+deep-research-python-bits.txt
