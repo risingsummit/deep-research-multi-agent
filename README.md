@@ -133,7 +133,11 @@ The tests cover supervisor routing, retry behavior, and offline workflow generat
 
 I wrote a ready-to-post LinkedIn project summary in [`LINKEDIN_POST.md`](LINKEDIN_POST.md).
 
-After publishing this project to GitHub, replace the placeholder repo URL in that file with your public repository link.
+Repo URL: https://github.com/risingsummit/deep-research-multi-agent
+
+## Landing Page
+
+The GitHub Pages landing page lives in [`docs/`](docs/). In GitHub repository settings, publish Pages from the `main` branch and `/docs` folder.
 
 ## Portfolio Summary
 

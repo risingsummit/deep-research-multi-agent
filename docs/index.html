@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Deep Research Multi-Agent System: a Python LangGraph research workflow with planner, researcher, analyst, verifier, and writer agents."
+    />
+    <title>Deep Research Multi-Agent System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Deep Research Multi-Agent System home">
+        <span class="brand-mark">DR</span>
+        <span>Deep Research Agents</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#agents">Agents</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#stack">Stack</a>
+        <a class="nav-action" href="https://github.com/risingsummit/deep-research-multi-agent">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <img
+          class="hero-image"
+          src="assets/multi-agent-hero.png"
+          alt="Abstract research workstation showing connected agent workflow nodes and source cards"
+        />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Python + LangGraph + LLM APIs</p>
+          <h1>Deep Research Multi-Agent System</h1>
+          <p class="hero-copy">
+            A real agentic research workflow where planner, researcher, analyst, verifier, and writer agents collaborate
+            through a LangGraph state machine.
+          </p>
+          <div class="hero-actions" aria-label="Project links">
+            <a class="button primary" href="https://github.com/risingsummit/deep-research-multi-agent">
+              <span aria-hidden="true">↗</span>
+              View Repo
+            </a>
+            <a class="button secondary" href="#workflow">
+              <span aria-hidden="true">↓</span>
+              See Workflow
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Project highlights">
+        <div>
+          <strong>5</strong>
+          <span>Specialist agents</span>
+        </div>
+        <div>
+          <strong>1</strong>
+          <span>Supervisor graph</span>
+        </div>
+        <div>
+          <strong>2+</strong>
+          <span>Research rounds</span>
+        </div>
+        <div>
+          <strong>0</strong>
+          <span>Browser dependency</span>
+        </div>
+      </section>
+
+      <section class="section intro">
+        <div class="section-heading">
+          <p class="eyebrow">Beyond One Prompt</p>
+          <h2>Built to show agentic task delegation</h2>
+        </div>
+        <p>
+          This project separates research into distinct responsibilities instead of relying on one large chatbot prompt.
+          The graph keeps a shared state, records a trace of agent decisions, retries fragile search work, and routes the
+          task back to research when verification finds weak evidence.
+        </p>
+      </section>
+
+      <section id="agents" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Agent Team</p>
+          <h2>Each agent owns one part of the job</h2>
+        </div>
+        <div class="agent-grid">
+          <article class="agent-card">
+            <span class="agent-index">01</span>
+            <h3>Planner</h3>
+            <p>Turns a broad goal into focused research questions that guide the rest of the workflow.</p>
+          </article>
+          <article class="agent-card">
+            <span class="agent-index">02</span>
+            <h3>Researcher</h3>
+            <p>Searches for source snippets, normalizes evidence, and records tool errors instead of crashing.</p>
+          </article>
+          <article class="agent-card">
+            <span class="agent-index">03</span>
+            <h3>Analyst</h3>
+            <p>Extracts themes, risks, and practical recommendations from the collected source material.</p>
+          </article>
+          <article class="agent-card">
+            <span class="agent-index">04</span>
+            <h3>Verifier</h3>
+            <p>Checks source coverage and can route the graph back to research when the evidence is thin.</p>
+          </article>
+          <article class="agent-card">
+            <span class="agent-index">05</span>
+            <h3>Writer</h3>
+            <p>Synthesizes the final report once the verifier approves the evidence or the round limit is reached.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="workflow" class="section workflow-section">
+        <div class="section-heading">
+          <p class="eyebrow">LangGraph Workflow</p>
+          <h2>The verifier controls the loop</h2>
+        </div>
+        <div class="workflow-layout">
+          <div class="flow-panel" aria-label="Agent workflow diagram">
+            <div class="flow-node active">Goal</div>
+            <div class="flow-line"></div>
+            <div class="flow-node">Planner</div>
+            <div class="flow-line"></div>
+            <div class="flow-node">Researcher</div>
+            <div class="flow-line"></div>
+            <div class="flow-node">Analyst</div>
+            <div class="flow-line"></div>
+            <div class="flow-node verifier">Verifier</div>
+            <div class="flow-branch">
+              <span>needs more evidence</span>
+              <span>approved</span>
+            </div>
+            <div class="flow-row">
+              <div class="flow-node small">Research again</div>
+              <div class="flow-node small">Writer</div>
+            </div>
+          </div>
+          <div class="trace-panel">
+            <div class="trace-header">
+              <span>Sample Trace</span>
+              <button id="copy-link" type="button">Copy Repo Link</button>
+            </div>
+            <ol id="trace-list">
+              <li>Supervisor received the research goal.</li>
+              <li>Planner created research questions.</li>
+              <li>Researcher gathered source snippets.</li>
+              <li>Analyst extracted themes and risks.</li>
+              <li>Verifier approved the evidence.</li>
+              <li>Writer synthesized the final report.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="stack" class="section stack-section">
+        <div class="section-heading">
+          <p class="eyebrow">Implementation</p>
+          <h2>Python system with practical failure handling</h2>
+        </div>
+        <div class="stack-list">
+          <span>Python</span>
+          <span>LangGraph</span>
+          <span>LangChain Core</span>
+          <span>OpenAI-compatible APIs</span>
+          <span>Requests</span>
+          <span>BeautifulSoup</span>
+          <span>Pytest</span>
+        </div>
+      </section>
+
+      <section class="section cta">
+        <div>
+          <p class="eyebrow">Portfolio Project</p>
+          <h2>Explore the source code and run the workflow locally</h2>
+        </div>
+        <a class="button primary" href="https://github.com/risingsummit/deep-research-multi-agent">
+          <span aria-hidden="true">↗</span>
+          Open GitHub Repo
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <span>Deep Research Multi-Agent System</span>
+      <a href="https://github.com/risingsummit/deep-research-multi-agent">github.com/risingsummit/deep-research-multi-agent</a>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
